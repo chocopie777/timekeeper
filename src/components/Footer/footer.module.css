@@ -36,4 +36,19 @@
 .inner {
     padding: 31px 0;
     display: flex;
+    justify-content: space-between;
+}
+.text_copy {
+    color: #FAFAFA;
+    font-family: Montserrat-Medium;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.left_box {
+    display: flex;
+}
+.copy {
+    margin-left: 44px;
 }
