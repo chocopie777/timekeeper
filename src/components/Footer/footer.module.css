@@ -1,0 +1,39 @@
+.container {
+    max-width: 1133px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+.footer {
+    background: #486E1A
+}
+.logo {
+    padding: 4px 14px;
+    justify-content: center;
+    border-radius: 8px;
+    background: #FAFAFA;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: 11px;
+}
+.text {
+    padding-left: 12px;
+    color: #212121;
+    font-family: Montserrat-Bold;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+.sub_text {
+    color: #FAFAFA;
+    font-family: Montserrat-SemiBold;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.inner {
+    padding: 31px 0;
+    display: flex;
+}
