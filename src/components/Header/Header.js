@@ -11,7 +11,7 @@ function Header(props) {
                         <img src={logo} alt="logo"/>
                         <span className={styles.text}>TimeKeeper</span>
                     </a>
-                    <a className={styles.link_git} href="#">
+                    <a className={styles.link_git} href="/">
                         Github
                     </a>
                 </div>

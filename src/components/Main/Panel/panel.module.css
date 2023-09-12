@@ -87,22 +87,3 @@
 .btn_add_card svg {
     margin-right: 8px;
 }
-
-.btn_filter {
-    max-height: 46px;
-    cursor: pointer;
-    display: flex;
-    align-items: center;
-    padding: 10px 17px;
-    border-radius: 10px;
-    border: 3px solid #E0DCDC;
-    color: #212121;
-    font-family: Montserrat-SemiBold;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: normal;
-}
-.btn_filter svg{
-    margin-left: 8px;
-}

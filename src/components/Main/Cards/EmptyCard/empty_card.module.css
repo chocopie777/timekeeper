@@ -1,0 +1,58 @@
+.title {
+    color: #212121;
+    font-family: Montserrat-SemiBold;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 17px;
+}
+.sub_title {
+    color: #212121;
+    text-align: center;
+    font-family: Montserrat-Regular;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 77px;
+}
+.sub_title strong {
+    font-family: Montserrat-Bold;
+    font-weight: 700;
+}
+.btn_add_card {
+    border-radius: 10px;
+    background: #486E1A;
+    color: #FFFFFE;
+    font-family: Montserrat-Regular;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    border: none;
+    display: flex;
+    align-items: center;
+    padding: 13px 53px 13px 44px;
+    cursor: pointer;
+}
+.btn_add_card svg {
+    margin-right: 16px;
+}
+.empty_card {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    margin-bottom: 50px;
+    margin-top: 108px;
+}
+.empty_card__inner {
+    max-width: 353px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.empty_card__img {
+    margin-bottom: 30px;
+}

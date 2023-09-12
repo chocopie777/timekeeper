@@ -1,0 +1,122 @@
+.btn_filter {
+    max-height: 46px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 10px 17px;
+    border-radius: 10px;
+    border: 3px solid #E0DCDC;
+    color: #212121;
+    font-family: Montserrat-SemiBold;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.btn_filter svg{
+    margin-left: 8px;
+}
+.filter {
+    position: relative;
+}
+.dropdown {
+    position: absolute;
+    right: 0;
+    top: calc(100% + 15px);
+    border-radius: 10px;
+    border: 2px solid #E2E2E2;
+    background: #FFF;
+    box-shadow: 3px 3px 11px -6px rgba(0, 0, 0, 0.14);
+    width: 314px;
+}
+.text, .text_group {
+    color: #212121;
+    font-family: Montserrat-Bold;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 6px;
+    display: block;
+}
+.text {
+    margin-bottom: 6px;
+}
+.text_group {
+    margin-bottom: 17px;
+}
+.item_sort_by, .item_group_by {
+    color: #000;
+    font-family: Montserrat-Medium;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.item_sort_by{
+    cursor: pointer;
+    padding-left: 9px;
+    padding-top: 7px;
+    padding-bottom: 10px;
+    height: 42px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item_sort_by_active{
+    border-radius: 10px;
+    background: #EBEEE8;
+}
+.item_sort_by_active svg {
+    margin-right: 22px;
+}
+.rotate svg {
+    rotate: 180deg;
+}
+
+.item_sort_by:hover {
+    border-radius: 10px;
+    background: #EBEEE8;
+}
+
+.item_group_by {
+    padding-left: 9px;
+    padding-top: 10px;
+    padding-bottom: 12px;
+    cursor: pointer;
+}
+
+.item_group_by:hover {
+    border-radius: 10px;
+    background: #D9F1BD;
+}
+
+.wrapper_dropdown {
+    padding: 28px 17px 23px;
+}
+.wrapper_setting {
+    border-radius: 0px 0px 9px 9px;
+    background: rgba(240, 243, 236, 0.87);
+    padding: 15px;
+    display: flex;
+    justify-content: flex-end;
+}
+.btn {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    padding: 6px 9px;
+    border: none;
+    border-radius: 10px;
+    background: #476D1A;
+    color: #FFF;
+    font-family: Montserrat-Medium;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.dropdown_sort_by {
+    margin-bottom: 10px;
+}

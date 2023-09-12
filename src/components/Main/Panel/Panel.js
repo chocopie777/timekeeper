@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './panel.module.css';
+import Filter from "./Filter/Filter";
 
 function Panel(props) {
     return (
@@ -15,14 +16,7 @@ function Panel(props) {
                 <div className={styles.custom_input}>
                     <input className={styles.input_search} type="text" placeholder="Search"/>
                 </div>
-                <button className={styles.btn_filter}>
-                    Filter
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path fill-rule="evenodd" clip-rule="evenodd"
-                              d="M3 6V8H21V6H3ZM3 18H9V16H3V18ZM15 13H3V11H15V13Z"
-                              fill="black"/>
-                    </svg>
-                </button>
+                <Filter/>
             </div>
         </div>
     );
