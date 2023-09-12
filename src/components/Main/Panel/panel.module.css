@@ -1,11 +1,15 @@
 .panel {
     display: flex;
-    justify-content: space-between;
     align-items: center;
+    padding-top: 52px;
+    padding-bottom: 37px;
+    border-bottom: 1px solid #E0DCDC;
 }
 
 .wrapper {
+    width: 100%;
     display: flex;
+    justify-content: flex-end;
     margin-right: 27px;
     align-items: center;
 }
@@ -20,6 +24,8 @@
 }
 
 .custom_input {
+    width: 100%;
+    max-width: 418px;
     position: relative;
     margin-right: 12px;
 }
@@ -35,6 +41,9 @@
 }
 
 .input_search {
+    width: 100%;
+    max-width: 418px;
+    max-height: 50px;
     border-radius: 10px;
     border: 3px solid #EAEAEA;
     background: #FFF;
@@ -56,6 +65,7 @@
 }
 
 .btn_add_card {
+    max-height: 42px;
     cursor: pointer;
     padding: 10px 22px 8px 11px;
     display: flex;
@@ -79,6 +89,7 @@
 }
 
 .btn_filter {
+    max-height: 46px;
     cursor: pointer;
     display: flex;
     align-items: center;
