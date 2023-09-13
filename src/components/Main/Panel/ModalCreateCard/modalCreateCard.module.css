@@ -1,0 +1,177 @@
+.wrap {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2953);
+}
+
+.modal_create_card {
+    max-width: 749px;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 23px;
+    background: #FFF;
+    padding-top: 44px;
+}
+
+.radio_inp {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    clip: rect(0 0 0 0);
+}
+
+.radio_style {
+    user-select: none;
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 10px;
+    background: #F2F5EF;
+    padding: 22px 24px 36px 18px;
+    width: 328px;
+    border: 2px solid #F2F5EF;
+}
+
+.radio_inp:checked + .radio_style {
+    border: 2px solid #059669;
+}
+.radio_inp:checked + .radio_style .radio_btn {
+    border: 3px solid #059669;
+}
+.radio_inp:checked + .radio_style .radio_btn::before {
+    width: 10px;
+    height: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    content: '';
+    background: #059669;
+    border-radius: 50%;
+}
+
+.radio_inp:focus + .radio_style {
+    box-shadow: 0 0 0 2px #000;
+}
+
+.radio_btn {
+    width: 24px;
+    height: 24px;
+    border: 3px solid #96B0A8;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.radio_wrap {
+    margin-left: 40px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #F1E5E5;
+    padding-left: 37px;
+    padding-right: 37px;
+}
+
+.title_head {
+    color: #2A2A2A;
+    font-family: Montserrat-SemiBold;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.btn_close {
+    padding: 0;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+}
+
+.body {
+    margin-top: 16px;
+    padding-left: 37px;
+    padding-right: 37px;
+}
+
+.type_title {
+    color: #2A2A2A;
+    font-family: Montserrat-SemiBold;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 15px;
+}
+
+.wrap_radio_btns {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.radio_title {
+    color: #2A2A2A;
+    font-family: Montserrat-SemiBold;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 10px;
+}
+.radio_text {
+    color: #2A2A2A;
+    font-family: Montserrat-Medium;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.date_title {
+    color: #2A2A2A;
+    font-family: Montserrat-SemiBold;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 16px;
+}
+.date_inp {
+    width: 329px;
+    height: 46px;
+    margin-bottom: 53px;
+}
+.footer {
+    padding: 21px 56px;
+    border-radius: 0px 0px 30px 30px;
+    background: #F2F5EF;
+    display: flex;
+    justify-content: flex-end;
+}
+.btn_create {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    background: #476D1A;
+    color: #FFF;
+    font-family: Montserrat-Medium;
+    font-size: 22px;
+    border: none;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding: 15px 30px;
+}
+.btn_create svg {
+    margin-right: 16px;
+}

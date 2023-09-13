@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import styles from './filter.module.css';
 
 function Filter(props) {
-    const [isFilter, setIsFulter] = useState(false);
+    const [isFilter, setIsFilter] = useState(false);
     const [sortBy, setSortBy] = useState([
         {
             id: 0,
@@ -34,26 +34,102 @@ function Filter(props) {
                     increase: !item.increase
                 }
             } else {
+                return {
+                    ...item,
+                    increase: true,
+                    checked: false
+                }
+            }
+        }));
+    }
+
+    function handleGroupBy(id) {
+        setGroupBy(groupBy.map((item) => {
+            if (item.id === id) {
+                return {
+                    ...item,
+                    checked: true
+                }
+            } else {
                 return item;
             }
-            // TODO реализовать сброс checked и increase для item.id !== id,
-            //  чтбоы не было несколько одновременно включенных sort_by
         }));
+    }
 
+    function handleClear() {
+        setSortBy([
+            {
+                id: 0,
+                title: 'Title',
+                checked: false,
+                increase: true
+            },
+            {
+                id: 1,
+                title: 'Date',
+                checked: false,
+                increase: true
+            }
+        ]);
+        setGroupBy([
+            {
+                id: 0,
+                title: 'Card type',
+                checked: false
+            }
+        ]);
+    }
+
+    function countFilter() {
+        let count = 0;
+        for(let item of sortBy) {
+            if(item.checked) {
+                count++;
+            }
+        }
+        for(let item of groupBy) {
+            if(item.checked) {
+                count++;
+            }
+        }
+        return count;
+    }
+
+    function hide(e) {
+        console.log(e.relatedTarget);
     }
 
     return (
         <div className={styles.filter}>
-            <button className={styles.btn_filter} onClick={() => {
-                setIsFulter(!isFilter)
-            }}>
-                Filter
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                    <path fillRule="evenodd" clipRule="evenodd"
-                          d="M3 6V8H21V6H3ZM3 18H9V16H3V18ZM15 13H3V11H15V13Z"
-                          fill="black"/>
-                </svg>
-            </button>
+            {countFilter() > 0
+                ? <button className={`${styles.btn_filter} ${styles.btn_filter_active}`} onClick={() => {
+                    setIsFilter(!isFilter)
+                }}>
+                    Filter
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path fillRule="evenodd" clipRule="evenodd"
+                              d="M3 6V8H21V6H3ZM3 18H9V16H3V18ZM15 13H3V11H15V13Z"
+                              fill="black"/>
+                    </svg>
+                    {countFilter() > 0 && (
+                        <span className={styles.count}>{countFilter()}</span>
+                    )}
+                </button>
+                : <button className={`${styles.btn_filter} ${styles.style_count}`} onClick={() => {
+                    setIsFilter(!isFilter)
+                }} onBlur={hide}>
+                    Filter
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path fillRule="evenodd" clipRule="evenodd"
+                              d="M3 6V8H21V6H3ZM3 18H9V16H3V18ZM15 13H3V11H15V13Z"
+                              fill="black"/>
+                    </svg>
+                    {countFilter() > 0 && (
+                        <span className={styles.count}>{countFilter()}</span>
+                    )}
+                </button>
+            }
+
             {isFilter && (
                 <div className={styles.dropdown}>
                     <div className={styles.wrapper_dropdown}>
@@ -61,7 +137,7 @@ function Filter(props) {
                             <span className={styles.text}>Sort by</span>
                             {sortBy.map((item) => {
                                 if (item.checked) {
-                                    if(item.increase) {
+                                    if (item.increase) {
                                         return <div key={item.id}
                                                     className={`${styles.item_sort_by} ${styles.item_sort_by_active} ${styles.rotate}`}
                                                     onClick={() => {
@@ -100,12 +176,22 @@ function Filter(props) {
                         <div className={styles.dropdown_group_by}>
                             <span className={styles.text_group}>Group by</span>
                             {groupBy.map((item) => {
-                                return <div key={item.id} className={styles.item_group_by}>{item.title}</div>;
+                                if (item.checked) {
+                                    return <div key={item.id}
+                                                className={`${styles.item_group_by} ${styles.item_group_by_active}`}
+                                                onClick={() => {
+                                                    handleGroupBy(item.id)
+                                                }}>{item.title}</div>;
+                                } else {
+                                    return <div key={item.id} className={styles.item_group_by} onClick={() => {
+                                        handleGroupBy(item.id)
+                                    }}>{item.title}</div>;
+                                }
                             })}
                         </div>
                     </div>
                     <div className={styles.wrapper_setting}>
-                        <button className={styles.btn}>
+                        <button className={styles.btn} onClick={handleClear}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"
                                  fill="none">
                                 <path

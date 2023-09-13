@@ -13,12 +13,23 @@
     font-weight: 600;
     line-height: normal;
 }
-.btn_filter svg{
+
+.style_count {
+    margin-right: 33px;
+}
+
+.btn_filter_active {
+    border: 3px solid #059669;
+}
+
+.btn_filter svg {
     margin-left: 8px;
 }
+
 .filter {
     position: relative;
 }
+
 .dropdown {
     position: absolute;
     right: 0;
@@ -29,6 +40,7 @@
     box-shadow: 3px 3px 11px -6px rgba(0, 0, 0, 0.14);
     width: 314px;
 }
+
 .text, .text_group {
     color: #212121;
     font-family: Montserrat-Bold;
@@ -39,12 +51,15 @@
     margin-bottom: 6px;
     display: block;
 }
+
 .text {
     margin-bottom: 6px;
 }
+
 .text_group {
     margin-bottom: 17px;
 }
+
 .item_sort_by, .item_group_by {
     color: #000;
     font-family: Montserrat-Medium;
@@ -53,7 +68,8 @@
     font-weight: 500;
     line-height: normal;
 }
-.item_sort_by{
+
+.item_sort_by {
     cursor: pointer;
     padding-left: 9px;
     padding-top: 7px;
@@ -64,13 +80,15 @@
     align-items: center;
 }
 
-.item_sort_by_active{
+.item_sort_by_active {
     border-radius: 10px;
     background: #EBEEE8;
 }
+
 .item_sort_by_active svg {
     margin-right: 22px;
 }
+
 .rotate svg {
     rotate: 180deg;
 }
@@ -87,6 +105,11 @@
     cursor: pointer;
 }
 
+.item_group_by_active {
+    border-radius: 10px;
+    background: #D9F1BD;
+}
+
 .item_group_by:hover {
     border-radius: 10px;
     background: #D9F1BD;
@@ -95,6 +118,7 @@
 .wrapper_dropdown {
     padding: 28px 17px 23px;
 }
+
 .wrapper_setting {
     border-radius: 0px 0px 9px 9px;
     background: rgba(240, 243, 236, 0.87);
@@ -102,6 +126,7 @@
     display: flex;
     justify-content: flex-end;
 }
+
 .btn {
     cursor: pointer;
     display: flex;
@@ -117,6 +142,24 @@
     font-weight: 500;
     line-height: normal;
 }
+
 .dropdown_sort_by {
     margin-bottom: 10px;
+}
+
+.count {
+    width: 23px;
+    height: 23px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #059669;
+    border-radius: 50%;
+    color: #FFF;
+    font-family: Montserrat-Medium;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    margin-left: 10px;
 }
