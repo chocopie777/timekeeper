@@ -3,10 +3,8 @@ import styles from './panel.module.css';
 import Filter from "./Filter/Filter";
 import ModalCreateCard from "./ModalCreateCard/ModalCreateCard";
 
-function Panel(props) {
+function Panel({addCard}) {
     const [isAddCard, setIsAddCard] = useState(false);
-
-
 
     return (
         <div className={styles.panel}>
@@ -25,7 +23,7 @@ function Panel(props) {
                 </div>
                 <Filter/>
             </div>
-            {isAddCard && <ModalCreateCard onClose={() => {setIsAddCard(false)}}/>}
+            {isAddCard && <ModalCreateCard onClose={() => {setIsAddCard(false)}} addCard={addCard}/>}
         </div>
     );
 }

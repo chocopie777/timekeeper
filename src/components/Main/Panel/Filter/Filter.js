@@ -95,10 +95,6 @@ function Filter(props) {
         return count;
     }
 
-    function hide(e) {
-        console.log(e.relatedTarget);
-    }
-
     return (
         <div className={styles.filter}>
             {countFilter() > 0
@@ -117,7 +113,7 @@ function Filter(props) {
                 </button>
                 : <button className={`${styles.btn_filter} ${styles.style_count}`} onClick={() => {
                     setIsFilter(!isFilter)
-                }} onBlur={hide}>
+                }}>
                     Filter
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path fillRule="evenodd" clipRule="evenodd"

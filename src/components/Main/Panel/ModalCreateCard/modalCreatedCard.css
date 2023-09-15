@@ -1,0 +1,10 @@
+.react-datepicker__input-container, .react-datepicker-wrapper {
+    max-width: 329px;
+    width: 100%;
+}
+.react-datepicker__input-container::before {
+    position: absolute;
+    content: url("icon_calendar.svg");
+    right: 26px;
+    top: 11px;
+}

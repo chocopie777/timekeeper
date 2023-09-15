@@ -136,7 +136,7 @@
     font-weight: 500;
     line-height: normal;
 }
-.date_title {
+.date_title, .title_text {
     color: #2A2A2A;
     font-family: Montserrat-SemiBold;
     font-size: 19px;
@@ -145,12 +145,16 @@
     line-height: normal;
     margin-bottom: 16px;
 }
+.title_text {
+    margin-top: 12px;
+}
 .date_inp {
     width: 329px;
     height: 46px;
     margin-bottom: 53px;
 }
 .footer {
+    margin-top: 53px;
     padding: 21px 56px;
     border-radius: 0px 0px 30px 30px;
     background: #F2F5EF;
@@ -174,4 +178,35 @@
 }
 .btn_create svg {
     margin-right: 16px;
+}
+.date_style {
+    border-radius: 10px;
+    padding: 11px 60px 11px 24px;
+    border: 2px solid #EAEAEA;
+    color: #2A2A2A;
+    font-family: Montserrat-Medium;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    max-width: 329px;
+    width: 100%;
+}
+.react-datepicker__input-container {
+    max-width: 329px;
+    width: 100%;
+}
+
+.title_inp {
+    border-radius: 10px;
+    padding: 11px 24px 11px 24px;
+    border: 2px solid #EAEAEA;
+    color: #2A2A2A;
+    font-family: Montserrat-Medium;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    max-width: 329px;
+    width: 100%;
 }
