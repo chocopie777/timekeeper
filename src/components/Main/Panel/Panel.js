@@ -3,7 +3,7 @@ import styles from './panel.module.css';
 import Filter from "./Filter/Filter";
 import ModalCreateCard from "./ModalCreateCard/ModalCreateCard";
 
-function Panel({addCard}) {
+function Panel({addCard, sortBy, groupBy, onSort, onGroup, onClear}) {
     const [isAddCard, setIsAddCard] = useState(false);
 
     return (
@@ -21,7 +21,11 @@ function Panel({addCard}) {
                 <div className={styles.custom_input}>
                     <input className={styles.input_search} type="text" placeholder="Search"/>
                 </div>
-                <Filter/>
+                <Filter sortBy={sortBy}
+                        groupBy={groupBy}
+                        onSort={onSort}
+                        onGroup={onGroup}
+                        onClear={onClear}/>
             </div>
             {isAddCard && <ModalCreateCard onClose={() => {setIsAddCard(false)}} addCard={addCard}/>}
         </div>

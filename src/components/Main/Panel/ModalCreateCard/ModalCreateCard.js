@@ -4,6 +4,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import icon_calendar from './icon_calendar.svg';
 import modal from './modalCreatedCard.css';
+import { v4 } from 'uuid';
 
 function ModalCreateCard({addCard, onClose}) {
     const [date, setDate] = useState(new Date());
@@ -106,6 +107,7 @@ function ModalCreateCard({addCard, onClose}) {
                             onClick={() => {
                                 addCard(
                                 {
+                                    id: v4(),
                                     type: type,
                                     date: date,
                                     title: title

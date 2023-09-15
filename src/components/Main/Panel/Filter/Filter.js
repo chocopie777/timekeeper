@@ -1,84 +1,8 @@
 import React, {useState} from 'react';
 import styles from './filter.module.css';
 
-function Filter(props) {
+function Filter({sortBy, groupBy, onSort, onGroup, onClear}) {
     const [isFilter, setIsFilter] = useState(false);
-    const [sortBy, setSortBy] = useState([
-        {
-            id: 0,
-            title: 'Title',
-            checked: false,
-            increase: true
-        },
-        {
-            id: 1,
-            title: 'Date',
-            checked: false,
-            increase: true
-        }
-    ]);
-    const [groupBy, setGroupBy] = useState([
-        {
-            id: 0,
-            title: 'Card type',
-            checked: false
-        }
-    ]);
-
-    function handleSortBy(id) {
-        setSortBy(sortBy.map((item) => {
-            if (item.id === id) {
-                return {
-                    ...item,
-                    checked: true,
-                    increase: !item.increase
-                }
-            } else {
-                return {
-                    ...item,
-                    increase: true,
-                    checked: false
-                }
-            }
-        }));
-    }
-
-    function handleGroupBy(id) {
-        setGroupBy(groupBy.map((item) => {
-            if (item.id === id) {
-                return {
-                    ...item,
-                    checked: true
-                }
-            } else {
-                return item;
-            }
-        }));
-    }
-
-    function handleClear() {
-        setSortBy([
-            {
-                id: 0,
-                title: 'Title',
-                checked: false,
-                increase: true
-            },
-            {
-                id: 1,
-                title: 'Date',
-                checked: false,
-                increase: true
-            }
-        ]);
-        setGroupBy([
-            {
-                id: 0,
-                title: 'Card type',
-                checked: false
-            }
-        ]);
-    }
 
     function countFilter() {
         let count = 0;
@@ -137,7 +61,7 @@ function Filter(props) {
                                         return <div key={item.id}
                                                     className={`${styles.item_sort_by} ${styles.item_sort_by_active} ${styles.rotate}`}
                                                     onClick={() => {
-                                                        handleSortBy(item.id)
+                                                        onSort(item.id)
                                                     }}>{item.title}
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25"
                                                  viewBox="0 0 24 25" fill="none">
@@ -150,7 +74,7 @@ function Filter(props) {
                                         return <div key={item.id}
                                                     className={`${styles.item_sort_by} ${styles.item_sort_by_active}`}
                                                     onClick={() => {
-                                                        handleSortBy(item.id)
+                                                        onSort(item.id)
                                                     }}>{item.title}
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25"
                                                  viewBox="0 0 24 25" fill="none">
@@ -164,7 +88,7 @@ function Filter(props) {
                                 } else {
                                     return <div key={item.id} className={styles.item_sort_by}
                                                 onClick={() => {
-                                                    handleSortBy(item.id)
+                                                    onSort(item.id)
                                                 }}>{item.title}</div>;
                                 }
                             })}
@@ -176,18 +100,18 @@ function Filter(props) {
                                     return <div key={item.id}
                                                 className={`${styles.item_group_by} ${styles.item_group_by_active}`}
                                                 onClick={() => {
-                                                    handleGroupBy(item.id)
+                                                    onGroup(item.id)
                                                 }}>{item.title}</div>;
                                 } else {
                                     return <div key={item.id} className={styles.item_group_by} onClick={() => {
-                                        handleGroupBy(item.id)
+                                        onGroup(item.id)
                                     }}>{item.title}</div>;
                                 }
                             })}
                         </div>
                     </div>
                     <div className={styles.wrapper_setting}>
-                        <button className={styles.btn} onClick={handleClear}>
+                        <button className={styles.btn} onClick={onClear}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"
                                  fill="none">
                                 <path
