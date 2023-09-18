@@ -26,6 +26,7 @@ function Main(props) {
             checked: false
         }
     ]);
+    const [search, setSearch] = useState('');
     function addCard(item) {
         setCards([
             ...cards,
@@ -95,10 +96,12 @@ function Main(props) {
                        groupBy={groupBy}
                        onSort={handleSortBy}
                        onGroup={handleGroupBy}
-                       onClear={handleClear}/>
+                       onClear={handleClear}
+                       onSearch={setSearch}/>
                 <Cards cards={cards}
                        sortBy={sortBy}
-                       groupBy={groupBy}/>
+                       groupBy={groupBy}
+                       search={search}/>
             </div>
         </main>
     );

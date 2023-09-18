@@ -3,9 +3,12 @@ import styles from './cards.module.css';
 import Card from "./Card/Card";
 import EmptyCard from "./EmptyCard/EmptyCard";
 
-function Cards({cards, sortBy, groupBy}) {
+function Cards({cards, sortBy, groupBy, search}) {
     let nextCards = cards.slice();
 
+    if (search !== '') {
+        nextCards = nextCards.filter((item) => item.title.includes(search));
+    }
     for (let item of sortBy) {
         if (item.checked) {
             if (item.title === 'Title') {
@@ -38,7 +41,7 @@ function Cards({cards, sortBy, groupBy}) {
                             return 1;
                         } else if (a.date.getTime() < b.date.getTime()) {
                             return -1;
-                        } else{
+                        } else {
                             return 0;
                         }
                     })
@@ -48,7 +51,7 @@ function Cards({cards, sortBy, groupBy}) {
                             return 1;
                         } else if (a.date.getTime() > b.date.getTime()) {
                             return -1
-                        } else{
+                        } else {
                             return 0;
                         }
                     })
@@ -56,13 +59,13 @@ function Cards({cards, sortBy, groupBy}) {
             }
         }
     }
-    for(let item of groupBy) {
+    for (let item of groupBy) {
         if (item.checked) {
-            if(item.title === 'Card type') {
+            if (item.title === 'Card type') {
                 nextCards.sort((a, b) => {
-                    if(a.type < b.type) {
+                    if (a.type < b.type) {
                         return 1;
-                    } else if(a.type > b.type) {
+                    } else if (a.type > b.type) {
                         return -1
                     } else {
                         return 0;
