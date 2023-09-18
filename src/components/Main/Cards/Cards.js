@@ -3,7 +3,7 @@ import styles from './cards.module.css';
 import Card from "./Card/Card";
 import EmptyCard from "./EmptyCard/EmptyCard";
 
-function Cards({cards, sortBy, groupBy, search}) {
+function Cards({cards, sortBy, groupBy, search, onSetIsAddCard}) {
     let nextCards = cards.slice();
 
     if (search !== '') {
@@ -84,7 +84,7 @@ function Cards({cards, sortBy, groupBy, search}) {
                                      date={item.date}
                                      type={item.type}/>
                     })
-                    : <EmptyCard/>
+                    : <EmptyCard onSetIsAddCard={onSetIsAddCard}/>
             }
         </div>
     );

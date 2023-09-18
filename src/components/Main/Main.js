@@ -2,8 +2,10 @@ import React, {useState} from 'react';
 import styles from './main.module.css';
 import Panel from "./Panel/Panel";
 import Cards from "./Cards/Cards";
+import ModalCreateCard from "../Common/ModalCreateCard/ModalCreateCard";
 
 function Main(props) {
+    const [isAddCard, setIsAddCard] = useState(false);
     const [cards, setCards] = useState([]);
     const [sortBy, setSortBy] = useState([
         {
@@ -101,8 +103,10 @@ function Main(props) {
                 <Cards cards={cards}
                        sortBy={sortBy}
                        groupBy={groupBy}
-                       search={search}/>
+                       search={search}
+                       onSetIsAddCard={setIsAddCard}/>
             </div>
+            {isAddCard && <ModalCreateCard onClose={() => {setIsAddCard(false)}} addCard={addCard}/>}
         </main>
     );
 }

@@ -1,7 +1,7 @@
 import React, {useState} from 'react';
 import styles from './panel.module.css';
 import Filter from "./Filter/Filter";
-import ModalCreateCard from "./ModalCreateCard/ModalCreateCard";
+import ModalCreateCard from "../../Common/ModalCreateCard/ModalCreateCard";
 
 function Panel({addCard, sortBy, groupBy, onSort, onGroup, onClear, onSearch}) {
     const [isAddCard, setIsAddCard] = useState(false);
