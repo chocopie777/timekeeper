@@ -110,6 +110,7 @@ function Main(props) {
             </div>
             {isAddCard && <ModalCreateCard onClose={() => {
                 document.body.classList.remove('off-scroll');
+                document.querySelector('.simple-bar').classList.remove('off-scroll');
                 setIsAddCard(false)
             }}
                                            addCard={addCard}/>}

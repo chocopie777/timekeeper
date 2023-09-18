@@ -3,3 +3,6 @@
     flex-direction: column;
     min-height: 100%;
 }
+.simple-bar {
+    max-height: 100vh;
+}

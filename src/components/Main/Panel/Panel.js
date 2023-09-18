@@ -12,6 +12,7 @@ function Panel({addCard, sortBy, groupBy, onSort, onGroup, onClear, onSearch}) {
             <div className={styles.wrapper}>
                 <button className={styles.btn_add_card} onClick={() => {
                     document.body.classList.add('off-scroll');
+                    document.querySelector('.simple-bar').classList.add('off-scroll');
                     setIsAddCard(true)
                 }}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -32,6 +33,7 @@ function Panel({addCard, sortBy, groupBy, onSort, onGroup, onClear, onSearch}) {
             </div>
             {isAddCard && <ModalCreateCard onClose={() => {
                 document.body.classList.remove('off-scroll');
+                document.querySelector('.simple-bar').classList.remove('off-scroll');
                 setIsAddCard(false);
             }}
                                            addCard={addCard}/>}
