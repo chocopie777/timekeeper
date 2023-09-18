@@ -29,12 +29,14 @@ function Main(props) {
         }
     ]);
     const [search, setSearch] = useState('');
+
     function addCard(item) {
         setCards([
             ...cards,
             item
         ])
     }
+
     function handleSortBy(id) {
         setSortBy(sortBy.map((item) => {
             if (item.id === id) {
@@ -106,7 +108,11 @@ function Main(props) {
                        search={search}
                        onSetIsAddCard={setIsAddCard}/>
             </div>
-            {isAddCard && <ModalCreateCard onClose={() => {setIsAddCard(false)}} addCard={addCard}/>}
+            {isAddCard && <ModalCreateCard onClose={() => {
+                document.body.classList.remove('off-scroll');
+                setIsAddCard(false)
+            }}
+                                           addCard={addCard}/>}
         </main>
     );
 }

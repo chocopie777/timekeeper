@@ -11,6 +11,7 @@ function Panel({addCard, sortBy, groupBy, onSort, onGroup, onClear, onSearch}) {
             <h1 className={styles.title}>Timers</h1>
             <div className={styles.wrapper}>
                 <button className={styles.btn_add_card} onClick={() => {
+                    document.body.classList.add('off-scroll');
                     setIsAddCard(true)
                 }}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
@@ -20,7 +21,8 @@ function Panel({addCard, sortBy, groupBy, onSort, onGroup, onClear, onSearch}) {
                 </button>
 
                 <div className={styles.custom_input}>
-                    <input className={styles.input_search} type="text" placeholder="Search" onInput={(e) => onSearch(e.target.value)}/>
+                    <input className={styles.input_search} type="text" placeholder="Search"
+                           onInput={(e) => onSearch(e.target.value)}/>
                 </div>
                 <Filter sortBy={sortBy}
                         groupBy={groupBy}
@@ -28,7 +30,11 @@ function Panel({addCard, sortBy, groupBy, onSort, onGroup, onClear, onSearch}) {
                         onGroup={onGroup}
                         onClear={onClear}/>
             </div>
-            {isAddCard && <ModalCreateCard onClose={() => {setIsAddCard(false)}} addCard={addCard}/>}
+            {isAddCard && <ModalCreateCard onClose={() => {
+                document.body.classList.remove('off-scroll');
+                setIsAddCard(false);
+            }}
+                                           addCard={addCard}/>}
         </div>
     );
 }
