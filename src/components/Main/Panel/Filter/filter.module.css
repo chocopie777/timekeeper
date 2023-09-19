@@ -163,3 +163,15 @@
     line-height: normal;
     margin-left: 10px;
 }
+
+@media (max-width: 600px)  {
+    .style_count  {
+        margin-right: 33px;
+    }
+    .wrapper_dropdown {
+        padding: 18px 15px 23px;
+    }
+    .dropdown {
+        width: 281px;
+    }
+}

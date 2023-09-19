@@ -210,3 +210,42 @@
     max-width: 329px;
     width: 100%;
 }
+
+@media (max-width: 900px) {
+    .modal_create_card {
+        padding-top: 38px;
+    }
+    .title_head {
+        font-size: 25px;
+    }
+    .type_title {
+        font-size: 17px;
+    }
+    .modal_create_card {
+        max-width: 674px;
+    }
+    .radio_style {
+        padding: 19px 21px 31px 16px;
+        max-width: 295px;
+        width: 100%;
+    }
+    .radio_title {
+        font-size: 15px;
+    }
+    .radio_text {
+        font-size: 14px;
+    }
+    .date_title, .title_text {
+        font-size: 17px;
+    }
+    .date_style, .title_inp {
+        font-size: 14px;
+        max-width: 297px;
+    }
+    .date_style {
+        padding: 10px 60px 10px 21px;
+    }
+    .title_inp {
+        padding: 10px 22px 10px 22px;
+    }
+}

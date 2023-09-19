@@ -52,3 +52,23 @@
 .copy {
     margin-left: 44px;
 }
+@media (max-width: 900px) {
+    .right_box {
+        margin-left: 20px;
+    }
+}
+@media (max-width: 600px) {
+    .left_box {
+        flex-direction: column;
+    }
+    .copy {
+        margin-top: 18px;
+        margin-left: 0;
+    }
+    .text_copy {
+        font-size: 14px;
+    }
+    .sub_text {
+        font-size: 10px;
+    }
+}

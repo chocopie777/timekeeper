@@ -64,6 +64,7 @@
 }
 
 .btn_add_card {
+    min-width: 141px;
     max-height: 42px;
     cursor: pointer;
     padding: 10px 22px 8px 11px;
@@ -85,4 +86,41 @@
 
 .btn_add_card svg {
     margin-right: 8px;
+}
+
+@media (max-width: 900px) {
+    .panel {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-top: 24px;
+        padding-bottom: 51px;
+    }
+    .wrapper {
+        justify-content: space-between;
+    }
+    .title {
+        margin-bottom: 21px;
+    }
+}
+@media (max-width: 600px) {
+    .custom_input, .input_search {
+        max-width: unset;
+    }
+    .custom_input {
+        order: -1;
+        margin-bottom: 14px;
+        margin-right: 0;
+    }
+    .wrapper {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+    .btn_add_card {
+        margin-right: 16px;
+        font-size: 14px;
+        min-width: 130px;
+    }
+    .btn_add_card {
+        margin-right: 0;
+    }
 }
