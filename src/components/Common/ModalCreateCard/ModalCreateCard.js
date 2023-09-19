@@ -4,7 +4,7 @@ import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import icon_calendar from './icon_calendar.svg';
 import modal from './modalCreatedCard.css';
-import { v4 } from 'uuid';
+import {v4} from 'uuid';
 
 function ModalCreateCard({addCard, onClose}) {
     const [date, setDate] = useState(new Date());
@@ -29,26 +29,12 @@ function ModalCreateCard({addCard, onClose}) {
                     <h4 className={styles.type_title}>Card type</h4>
                     <div className={styles.wrap_radio_btns}>
                         <label>
-                            {type === 0
-                                ? (
-                                    <input className={styles.radio_inp}
-                                           type="radio"
-                                           name="sort"
-                                           value="count up"
-                                           checked
-                                           onChange={() => {
-                                               setType(0)
-                                           }}/>
-                                )
-                                : (
-                                    <input className={styles.radio_inp}
-                                           type="radio"
-                                           name="sort"
-                                           value="count up"
-                                           onChange={() => {
-                                               setType(0)
-                                           }}/>
-                                )}
+                            <input className={styles.radio_inp}
+                                   type="radio"
+                                   name="sort"
+                                   value="count up"
+                                   checked={type === 0}
+                                   onChange={() => {setType(0)}}/>
                             <div className={styles.radio_style}>
                                 <span className={styles.radio_btn}>
                                 </span>
@@ -63,22 +49,12 @@ function ModalCreateCard({addCard, onClose}) {
                             </div>
                         </label>
                         <label>
-                            {type !== 0
-                                ? (
-                                    <input className={styles.radio_inp}
-                                           type="radio"
-                                           name="sort"
-                                           value="count down"
-                                           checked
-                                           onChange={() => setType(1)}/>
-                                )
-                                : (
-                                    <input className={styles.radio_inp}
-                                           type="radio"
-                                           name="sort"
-                                           value="count down"
-                                           onChange={() => setType(1)}/>
-                                )}
+                            <input className={styles.radio_inp}
+                                   type="radio"
+                                   name="sort"
+                                   value="count down"
+                                   checked={type === 1}
+                                   onChange={() => setType(1)}/>
                             <div className={styles.radio_style}>
                                 <span className={styles.radio_btn}>
                                 </span>
@@ -106,12 +82,12 @@ function ModalCreateCard({addCard, onClose}) {
                     <button className={styles.btn_create}
                             onClick={() => {
                                 addCard(
-                                {
-                                    id: v4(),
-                                    type: type,
-                                    date: date,
-                                    title: title
-                                })
+                                    {
+                                        id: v4(),
+                                        type: type,
+                                        date: date,
+                                        title: title
+                                    })
                                 onClose();
                             }}>
                         <svg xmlns="http://www.w3.org/2000/svg" width="20" height="25" viewBox="0 0 20 25" fill="none">

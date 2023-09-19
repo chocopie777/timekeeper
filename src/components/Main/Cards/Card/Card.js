@@ -1,5 +1,6 @@
 import React from 'react';
 import styles from './card.module.css';
+import * as dayjs from 'dayjs'
 
 function Card({title, date, type}) {
     let month;
@@ -7,25 +8,30 @@ function Card({title, date, type}) {
     let hour;
     let minute;
     let nowDate = new Date();
-    let startDate = date;
 
     if (type === 0) {
-        month = nowDate.getMonth() - startDate.getMonth();
-        day = nowDate.getDay() - startDate.getDay();
-        hour = nowDate.getHours() - startDate.getHours();
-        minute = nowDate.getMinutes() - startDate.getMinutes();
+        month = dayjs(nowDate).diff(dayjs(date), 'month');
+        nowDate = dayjs(nowDate).subtract(month, 'month')
+        day = dayjs(nowDate).diff(dayjs(date),'day');
+        nowDate = dayjs(nowDate).subtract(day, 'day');
+        hour = dayjs(nowDate).diff(dayjs(date), 'hour');
+        nowDate = dayjs(nowDate).subtract(hour, 'hour');
+        minute = dayjs(nowDate).diff(dayjs(date), 'minute');
     } else {
-        month = startDate.getMonth() - nowDate.getMonth();
-        day = startDate.getDay() - nowDate.getDay();
-        hour = startDate.getHours() - nowDate.getHours();
-        minute = startDate.getMinutes() - nowDate.getMinutes();
+        month = dayjs(date).diff(dayjs(nowDate), 'month');
+        date = dayjs(date).subtract(month, 'month')
+        day = dayjs(date).diff(dayjs(nowDate),'day');
+        date = dayjs(date).subtract(day, 'day');
+        hour = dayjs(date).diff(dayjs(nowDate), 'hour');
+        date = dayjs(date).subtract(hour, 'hour');
+        minute = dayjs(date).diff(dayjs(nowDate), 'minute');
     }
-    // if (month < 0 || day < 0 || hour < 0 || minute < 0) {
-    //     month = 0;
-    //     day = 0;
-    //     hour = 0;
-    //     minute = 0;
-    // }
+    if (month < 0 || day < 0 || hour < 0 || minute < 0) {
+        month = 0;
+        day = 0;
+        hour = 0;
+        minute = 0;
+    }
 
     return (
         <div className={styles.card}>
@@ -36,7 +42,7 @@ function Card({title, date, type}) {
                 <button className={styles.setting_btn}>
                     <span></span>
                     <span></span>
-                    <span></span>
+                    <span></span>-
                 </button>
             </div>
             <div className={styles.card__bottom}>
