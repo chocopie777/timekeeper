@@ -16,21 +16,19 @@
     margin-left: 4px;
 }
 .card {
-    max-width: 340px;
+    word-break: break-word;
     width: 100%;
     padding: 18px 15px 20px 24px;
-    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     border-radius: 14px;
     border: 4px solid #EAEAEA;
     background: #FAFAFA;
-    margin-bottom: 26px;
 }
-.card__top {
+.card__head {
     display: flex;
     justify-content: space-between;
-}
-.card__bottom {
-    margin-top: 17px;
 }
 .title {
     color: #212121;
@@ -58,12 +56,13 @@
     line-height: normal;
 }
 
-.card__time_top {
+.card__body {
+    margin-top: 17px;
     display: flex;
     align-items: center;
 }
 
-.card__time_bottom {
+.card__footer {
     margin-top: 10px;
     display: flex;
     justify-content: space-between;

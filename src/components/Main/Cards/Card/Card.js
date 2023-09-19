@@ -35,42 +35,39 @@ function Card({title, date, type}) {
 
     return (
         <div className={styles.card}>
-            <div className={styles.card__top}>
+            <div className={styles.card__head}>
                 <p className={styles.title}>
                     {title}
                 </p>
                 <button className={styles.setting_btn}>
                     <span></span>
                     <span></span>
-                    <span></span>-
+                    <span></span>
                 </button>
             </div>
-            <div className={styles.card__bottom}>
-                <div className={styles.card__time}>
-                    <div className={styles.card__time_top}>
-                        <span className={styles.card__month_count}>{month}</span>
-                        <span className={styles.card__month_text}>Months {
-                            type === 0
-                                ? "Passed"
-                                : "Left"
-                        }</span>
-                    </div>
-                    <div className={styles.card__time_bottom}>
-                        <div className={styles.card__wrap}>
-                            <span className={styles.card__day_count}>{day}</span>
-                            <span className={styles.card__day_text}>Days</span>
-                        </div>
-                        <div className={styles.card__wrap}>
-                            <span className={styles.card__hour_count}>{hour}</span>
-                            <span className={styles.card__hour_text}>Hours</span>
-                        </div>
-                        <div className={styles.card__wrap}>
-                            <span className={styles.card__min_count}>{minute}</span>
-                            <span className={styles.card__min_text}>Minutes</span>
-                        </div>
-                    </div>
+            <div className={styles.card__body}>
+                <span className={styles.card__month_count}>{month}</span>
+                <span className={styles.card__month_text}>Months {
+                    type === 0
+                        ? "Passed"
+                        : "Left"
+                }</span>
+            </div>
+            <div className={styles.card__footer}>
+                <div className={styles.card__wrap}>
+                    <span className={styles.card__day_count}>{day}</span>
+                    <span className={styles.card__day_text}>Days</span>
+                </div>
+                <div className={styles.card__wrap}>
+                    <span className={styles.card__hour_count}>{hour}</span>
+                    <span className={styles.card__hour_text}>Hours</span>
+                </div>
+                <div className={styles.card__wrap}>
+                    <span className={styles.card__min_count}>{minute}</span>
+                    <span className={styles.card__min_text}>Minutes</span>
                 </div>
             </div>
+
         </div>
     );
 }

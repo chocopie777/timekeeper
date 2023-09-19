@@ -75,18 +75,24 @@ function Cards({cards, sortBy, groupBy, search, onSetIsAddCard}) {
         }
     }
     return (
-        <div className={styles.cards}>
+        <>
             {
                 nextCards.length > 0
-                    ? nextCards.map((item) => {
-                        return <Card key={item.id}
-                                     title={item.title}
-                                     date={item.date}
-                                     type={item.type}/>
-                    })
+                    ? (
+                        <div className={styles.cards}>
+                            {
+                                nextCards.map((item) => {
+                                    return <Card key={item.id}
+                                                 title={item.title}
+                                                 date={item.date}
+                                                 type={item.type}/>
+                                })
+                            }
+                        </div>
+                    )
                     : <EmptyCard onSetIsAddCard={onSetIsAddCard}/>
             }
-        </div>
+        </>
     );
 }
 
