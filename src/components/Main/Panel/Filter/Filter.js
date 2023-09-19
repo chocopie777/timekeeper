@@ -6,13 +6,13 @@ function Filter({sortBy, groupBy, onSort, onGroup, onClear}) {
 
     function countFilter() {
         let count = 0;
-        for(let item of sortBy) {
-            if(item.checked) {
+        for (let item of sortBy) {
+            if (item.checked) {
                 count++;
             }
         }
-        for(let item of groupBy) {
-            if(item.checked) {
+        for (let item of groupBy) {
+            if (item.checked) {
                 count++;
             }
         }
@@ -22,9 +22,13 @@ function Filter({sortBy, groupBy, onSort, onGroup, onClear}) {
     return (
         <div className={styles.filter}>
             {countFilter() > 0
-                ? <button className={`${styles.btn_filter} ${styles.btn_filter_active}`} onClick={() => {
-                    setIsFilter(!isFilter)
-                }}>
+                ? <button className={`${styles.btn_filter} ${styles.btn_filter_active}`}
+                          onClick={() => {
+                              setIsFilter(!isFilter)
+                          }}
+                          onBlur={() => {
+                              setIsFilter(false)
+                          }}>
                     Filter
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path fillRule="evenodd" clipRule="evenodd"
@@ -35,9 +39,13 @@ function Filter({sortBy, groupBy, onSort, onGroup, onClear}) {
                         <span className={styles.count}>{countFilter()}</span>
                     )}
                 </button>
-                : <button className={`${styles.btn_filter} ${styles.style_count}`} onClick={() => {
-                    setIsFilter(!isFilter)
-                }}>
+                : <button className={`${styles.btn_filter} ${styles.style_count}`}
+                          onClick={() => {
+                              setIsFilter(!isFilter)
+                          }}
+                          onBlur={() => {
+                              setIsFilter(false)
+                          }}>
                     Filter
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                         <path fillRule="evenodd" clipRule="evenodd"
@@ -60,7 +68,7 @@ function Filter({sortBy, groupBy, onSort, onGroup, onClear}) {
                                     if (item.increase) {
                                         return <div key={item.id}
                                                     className={`${styles.item_sort_by} ${styles.item_sort_by_active} ${styles.rotate}`}
-                                                    onClick={() => {
+                                                    onMouseDown={() => {
                                                         onSort(item.id)
                                                     }}>{item.title}
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25"
@@ -73,7 +81,7 @@ function Filter({sortBy, groupBy, onSort, onGroup, onClear}) {
                                     } else {
                                         return <div key={item.id}
                                                     className={`${styles.item_sort_by} ${styles.item_sort_by_active}`}
-                                                    onClick={() => {
+                                                    onMouseDown={() => {
                                                         onSort(item.id)
                                                     }}>{item.title}
                                             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25"
@@ -87,7 +95,7 @@ function Filter({sortBy, groupBy, onSort, onGroup, onClear}) {
                                     }
                                 } else {
                                     return <div key={item.id} className={styles.item_sort_by}
-                                                onClick={() => {
+                                                onMouseDown={() => {
                                                     onSort(item.id)
                                                 }}>{item.title}</div>;
                                 }
@@ -99,19 +107,20 @@ function Filter({sortBy, groupBy, onSort, onGroup, onClear}) {
                                 if (item.checked) {
                                     return <div key={item.id}
                                                 className={`${styles.item_group_by} ${styles.item_group_by_active}`}
-                                                onClick={() => {
+                                                onMouseDown={() => {
                                                     onGroup(item.id)
                                                 }}>{item.title}</div>;
                                 } else {
-                                    return <div key={item.id} className={styles.item_group_by} onClick={() => {
-                                        onGroup(item.id)
-                                    }}>{item.title}</div>;
+                                    return <div key={item.id} className={styles.item_group_by}
+                                                onMouseDown={() => {
+                                                    onGroup(item.id)
+                                                }}>{item.title}</div>;
                                 }
                             })}
                         </div>
                     </div>
                     <div className={styles.wrapper_setting}>
-                        <button className={styles.btn} onClick={onClear}>
+                        <button className={styles.btn} onMouseDown={onClear}>
                             <svg xmlns="http://www.w3.org/2000/svg" width="21" height="21" viewBox="0 0 21 21"
                                  fill="none">
                                 <path
