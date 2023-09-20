@@ -3,6 +3,7 @@ import styles from './main.module.css';
 import Panel from "./Panel/Panel";
 import Cards from "./Cards/Cards";
 import ModalCreateCard from "../Common/ModalCreateCard/ModalCreateCard";
+import ModalEditCard from "../Common/ModalEditCard/ModalEditCard";
 
 function Main(props) {
     const [isAddCard, setIsAddCard] = useState(false);
@@ -35,6 +36,10 @@ function Main(props) {
             ...cards,
             item
         ])
+    }
+
+    function editCard(item) {
+
     }
 
     function handleSortBy(id) {
@@ -92,6 +97,12 @@ function Main(props) {
         ]);
     }
 
+    function handleDeleteCard(id) {
+        setCards(
+            cards.filter((card) => card.id !== id)
+        );
+    }
+
     return (
         <main className={styles.main}>
             <div className={styles.container}>
@@ -106,14 +117,17 @@ function Main(props) {
                        sortBy={sortBy}
                        groupBy={groupBy}
                        search={search}
-                       onSetIsAddCard={setIsAddCard}/>
+                       onSetIsAddCard={setIsAddCard}
+                       onDeleteCard={handleDeleteCard}
+                />
             </div>
             {isAddCard && <ModalCreateCard onClose={() => {
                 document.body.classList.remove('off-scroll');
                 document.querySelector('.simple-bar').classList.remove('off-scroll');
                 setIsAddCard(false)
             }}
-                                           addCard={addCard}/>}
+                                           addCard={addCard}
+            />}
         </main>
     );
 }

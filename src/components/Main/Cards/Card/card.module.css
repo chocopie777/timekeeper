@@ -1,20 +1,3 @@
-.setting_btn {
-    border: none;
-    padding: 0;
-    display: flex;
-    cursor: pointer;
-    background: none;
-}
-.setting_btn span{
-    display: inline-block;
-    width: 4px;
-    height: 4px;
-    background: #D8D8D8;
-    border-radius: 50%;
-}
-.setting_btn span + span {
-    margin-left: 4px;
-}
 .card {
     word-break: break-word;
     width: 100%;

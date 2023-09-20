@@ -21,42 +21,25 @@ function Filter({sortBy, groupBy, onSort, onGroup, onClear}) {
 
     return (
         <div className={styles.filter}>
-            {countFilter() > 0
-                ? <button className={`${styles.btn_filter} ${styles.btn_filter_active}`}
-                          onClick={() => {
-                              setIsFilter(!isFilter)
-                          }}
-                          onBlur={() => {
-                              setIsFilter(false)
-                          }}>
-                    Filter
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path fillRule="evenodd" clipRule="evenodd"
-                              d="M3 6V8H21V6H3ZM3 18H9V16H3V18ZM15 13H3V11H15V13Z"
-                              fill="black"/>
-                    </svg>
-                    {countFilter() > 0 && (
-                        <span className={styles.count}>{countFilter()}</span>
-                    )}
-                </button>
-                : <button className={`${styles.btn_filter} ${styles.style_count}`}
-                          onClick={() => {
-                              setIsFilter(!isFilter)
-                          }}
-                          onBlur={() => {
-                              setIsFilter(false)
-                          }}>
-                    Filter
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <path fillRule="evenodd" clipRule="evenodd"
-                              d="M3 6V8H21V6H3ZM3 18H9V16H3V18ZM15 13H3V11H15V13Z"
-                              fill="black"/>
-                    </svg>
-                    {countFilter() > 0 && (
-                        <span className={styles.count}>{countFilter()}</span>
-                    )}
-                </button>
-            }
+            <button className={countFilter() > 0
+                ? `${styles.btn_filter} ${styles.btn_filter_active}`
+                : `${styles.btn_filter} ${styles.style_count}`}
+                    onClick={() => {
+                        setIsFilter(!isFilter)
+                    }}
+                    onBlur={() => {
+                        setIsFilter(false)
+                    }}>
+                Filter
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                    <path fillRule="evenodd" clipRule="evenodd"
+                          d="M3 6V8H21V6H3ZM3 18H9V16H3V18ZM15 13H3V11H15V13Z"
+                          fill="black"/>
+                </svg>
+                {countFilter() > 0 && (
+                    <span className={styles.count}>{countFilter()}</span>
+                )}
+            </button>
 
             {isFilter && (
                 <div className={styles.dropdown}>

@@ -31,12 +31,14 @@ function Panel({addCard, sortBy, groupBy, onSort, onGroup, onClear, onSearch}) {
                         onGroup={onGroup}
                         onClear={onClear}/>
             </div>
-            {isAddCard && <ModalCreateCard onClose={() => {
-                document.body.classList.remove('off-scroll');
-                document.querySelector('.simple-bar').classList.remove('off-scroll');
-                setIsAddCard(false);
-            }}
-                                           addCard={addCard}/>}
+            {isAddCard && <ModalCreateCard
+                onClose={() => {
+                    document.body.classList.remove('off-scroll');
+                    document.querySelector('.simple-bar').classList.remove('off-scroll');
+                    setIsAddCard(false);
+                }}
+                addCard={addCard}
+            />}
         </div>
     );
 }

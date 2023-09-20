@@ -3,7 +3,7 @@ import styles from './cards.module.css';
 import Card from "./Card/Card";
 import EmptyCard from "./EmptyCard/EmptyCard";
 
-function Cards({cards, sortBy, groupBy, search, onSetIsAddCard}) {
+function Cards({cards, sortBy, groupBy, search, onSetIsAddCard, onDeleteCard}) {
     let nextCards = cards.slice();
 
     if (search !== '') {
@@ -85,7 +85,11 @@ function Cards({cards, sortBy, groupBy, search, onSetIsAddCard}) {
                                     return <Card key={item.id}
                                                  title={item.title}
                                                  date={item.date}
-                                                 type={item.type}/>
+                                                 type={item.type}
+                                                 onDeleteCard={() => {
+                                                     onDeleteCard(item.id)
+                                                 }}
+                                    />
                                 })
                             }
                         </div>

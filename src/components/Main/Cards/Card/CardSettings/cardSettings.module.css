@@ -1,0 +1,68 @@
+.setting_btn {
+    border: none;
+    padding: 0;
+    display: flex;
+    cursor: pointer;
+    background: none;
+}
+
+.setting_btn span {
+    display: inline-block;
+    width: 4px;
+    height: 4px;
+    background: #D8D8D8;
+    border-radius: 50%;
+}
+
+.setting_btn span + span {
+    margin-left: 4px;
+}
+
+.settings {
+    position: relative;
+}
+
+.dropdown {
+    padding: 15px;
+    width: 200px;
+    top: calc(100% + 10px);
+    right: 0;
+    position: absolute;
+    border-radius: 10px;
+    border: 2px solid #E2E2E2;
+    background: #FFF;
+    box-shadow: 3px 3px 11px -6px rgba(0, 0, 0, 0.14);
+}
+
+.item_title {
+    color: #212121;
+    font-family: Montserrat-Bold;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    margin-bottom: 5px;
+}
+
+.item {
+    color: #000;
+    font-family: Montserrat-Medium;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+
+.setting {
+    cursor: pointer;
+    padding: 10px;
+}
+
+.setting:hover {
+    border-radius: 10px;
+    background: #EBEEE8;
+}
+
+.list {
+
+}

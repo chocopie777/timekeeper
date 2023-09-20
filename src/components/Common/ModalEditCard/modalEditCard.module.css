@@ -1,0 +1,357 @@
+.wrap {
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.2953);
+}
+
+.modal_create_card {
+    max-width: 749px;
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 23px;
+    background: #FFF;
+    padding-top: 44px;
+}
+
+.radio_inp {
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    clip: rect(0 0 0 0);
+}
+
+.radio_style {
+    user-select: none;
+    cursor: pointer;
+    display: inline-block;
+    border-radius: 10px;
+    background: #F2F5EF;
+    padding: 22px 24px 36px 18px;
+    width: 328px;
+    border: 2px solid #F2F5EF;
+}
+
+.radio_inp:checked + .radio_style {
+    border: 2px solid #059669;
+}
+.radio_inp:checked + .radio_style .radio_btn {
+    border: 3px solid #059669;
+    background: white;
+}
+.radio_inp:checked + .radio_style .radio_btn::before {
+    width: 10px;
+    height: 10px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    content: '';
+    background: #059669;
+    border-radius: 50%;
+}
+
+.radio_inp:focus + .radio_style {
+    box-shadow: 0 0 0 2px #000;
+}
+
+.radio_btn {
+    width: 24px;
+    height: 24px;
+    border: 3px solid #96B0A8;
+    border-radius: 50%;
+    position: absolute;
+    background: white;
+}
+
+.radio_wrap {
+    margin-left: 40px;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #F1E5E5;
+    padding-left: 37px;
+    padding-right: 37px;
+}
+
+.title_head {
+    color: #2A2A2A;
+    font-family: Montserrat-SemiBold;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+
+.btn_close {
+    padding: 0;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+}
+
+.body {
+    margin-top: 16px;
+    padding-left: 37px;
+    padding-right: 37px;
+}
+
+.type_title {
+    color: #2A2A2A;
+    font-family: Montserrat-SemiBold;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 15px;
+}
+
+.wrap_radio_btns {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 12px;
+}
+
+.radio_title {
+    color: #2A2A2A;
+    font-family: Montserrat-SemiBold;
+    font-size: 17px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 10px;
+}
+.radio_text {
+    color: #2A2A2A;
+    font-family: Montserrat-Medium;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+}
+.date_title, .title_text {
+    color: #2A2A2A;
+    font-family: Montserrat-SemiBold;
+    font-size: 19px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    margin-bottom: 16px;
+}
+.title_text {
+    margin-top: 12px;
+}
+.date_inp {
+    width: 329px;
+    height: 46px;
+    margin-bottom: 53px;
+}
+.footer {
+    margin-top: 53px;
+    padding: 21px 56px;
+    border-radius: 0px 0px 30px 30px;
+    background: #F2F5EF;
+    display: flex;
+    justify-content: flex-end;
+}
+.btn_create {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-radius: 10px;
+    background: #476D1A;
+    color: #FFF;
+    font-family: Montserrat-Medium;
+    font-size: 22px;
+    border: none;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    padding: 15px 30px;
+}
+.btn_create svg {
+    margin-right: 16px;
+}
+.date_style {
+    border-radius: 10px;
+    padding: 11px 60px 11px 24px;
+    border: 2px solid #EAEAEA;
+    color: #2A2A2A;
+    font-family: Montserrat-Medium;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    max-width: 329px;
+    width: 100%;
+}
+.react-datepicker__input-container {
+    max-width: 329px;
+    width: 100%;
+}
+
+.title_inp {
+    border-radius: 10px;
+    padding: 11px 24px 11px 24px;
+    border: 2px solid #EAEAEA;
+    color: #2A2A2A;
+    font-family: Montserrat-Medium;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    max-width: 329px;
+    width: 100%;
+}
+
+@media (max-width: 900px) {
+    .modal_create_card {
+        padding-top: 38px;
+    }
+    .title_head {
+        font-size: 25px;
+    }
+    .type_title {
+        font-size: 17px;
+    }
+    .modal_create_card {
+        max-width: 674px;
+    }
+    .radio_style {
+        padding: 19px 21px 31px 16px;
+        max-width: 295px;
+        width: 100%;
+        height: 100%;
+    }
+    .radio_title {
+        font-size: 15px;
+    }
+    .radio_text {
+        font-size: 14px;
+    }
+    .date_title, .title_text {
+        font-size: 17px;
+    }
+    .date_style, .title_inp {
+        font-size: 14px;
+        max-width: 297px;
+    }
+    .date_style {
+        padding: 10px 60px 10px 21px;
+    }
+    .title_inp {
+        padding: 10px 22px 10px 22px;
+    }
+    .btn_create {
+        font-size: 20px;
+        padding: 14px 27px;
+    }
+    .btn_create svg {
+        margin-right: 14px;
+    }
+    .footer {
+        padding: 18px 50px;
+    }
+    .body {
+        padding-left: 33px;
+        padding-right: 33px;
+        margin-top: 13px;
+    }
+    .type_title {
+        margin-bottom: 14px;
+    }
+    .wrap_radio_btns label + label {
+        margin-left: 5px;
+    }
+    .btn_close svg {
+        width: 19px;
+        height: 19px;
+    }
+    .radio_btn {
+        width: 20px;
+        height: 20px;
+    }
+    .radio_inp:checked + .radio_style .radio_btn::before {
+        width: 8px;
+        height: 8px;
+    }
+    .radio_wrap {
+        margin-left: 36px;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer  {
+        justify-content: center;
+    }
+    .btn_create svg{
+        margin-right: 29px;
+    }
+    .btn_create {
+        padding-left: 14px;
+        padding-right: 33px;
+        font-size: 16px;
+    }
+    .btn_close svg {
+        width: 16px;
+        height: 16px;
+    }
+    .title_head {
+        font-size: 18px;
+    }
+    .type_title, .date_title, .title_text {
+        font-size: 14px;
+    }
+    .date_style, .title_inp {
+        font-size: 12px;
+        max-width: unset;
+    }
+    .body {
+        padding-left: 13px;
+        padding-right: 13px;
+        margin-top: 13px;
+    }
+    .radio_title {
+        font-size: 11px;
+    }
+    .radio_text {
+        font-size: 10px;
+    }
+    .radio_style {
+        padding: 12px 8px 9px 6px;
+        border: 1px solid #F2F5EF;
+    }
+    .radio_btn {
+        margin-top: 1px;
+        width: 12px;
+        height: 12px;
+        border: 2px solid #96B0A8;
+
+    }
+    .radio_inp:checked + .radio_style .radio_btn {
+        border: 2px solid #059669;
+    }
+    .radio_inp:checked + .radio_style .radio_btn::before {
+        width: 4px;
+        height: 4px;
+    }
+    .radio_wrap {
+        margin-left: 17px;
+    }
+    .body label {
+        width: 50%;
+    }
+    .radio_inp:checked + .radio_style {
+        border: 1px solid #059669;
+    }
+}
