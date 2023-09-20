@@ -43,6 +43,7 @@
 }
 .radio_inp:checked + .radio_style .radio_btn {
     border: 3px solid #059669;
+    background: white;
 }
 .radio_inp:checked + .radio_style .radio_btn::before {
     width: 10px;
@@ -66,6 +67,7 @@
     border: 3px solid #96B0A8;
     border-radius: 50%;
     position: absolute;
+    background: white;
 }
 
 .radio_wrap {
@@ -228,6 +230,7 @@
         padding: 19px 21px 31px 16px;
         max-width: 295px;
         width: 100%;
+        height: 100%;
     }
     .radio_title {
         font-size: 15px;
@@ -247,5 +250,107 @@
     }
     .title_inp {
         padding: 10px 22px 10px 22px;
+    }
+    .btn_create {
+        font-size: 20px;
+        padding: 14px 27px;
+    }
+    .btn_create svg {
+        margin-right: 14px;
+    }
+    .footer {
+        padding: 18px 50px;
+    }
+    .body {
+        padding-left: 33px;
+        padding-right: 33px;
+        margin-top: 13px;
+    }
+    .type_title {
+        margin-bottom: 14px;
+    }
+    .wrap_radio_btns label + label {
+        margin-left: 5px;
+    }
+    .btn_close svg {
+        width: 19px;
+        height: 19px;
+    }
+    .radio_btn {
+        width: 20px;
+        height: 20px;
+    }
+    .radio_inp:checked + .radio_style .radio_btn::before {
+        width: 8px;
+        height: 8px;
+    }
+    .radio_wrap {
+        margin-left: 36px;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer  {
+        justify-content: center;
+    }
+    .btn_create svg{
+        margin-right: 29px;
+    }
+    .btn_create {
+        padding-left: 14px;
+        padding-right: 33px;
+        font-size: 16px;
+    }
+    .btn_close svg {
+        width: 16px;
+        height: 16px;
+    }
+    .title_head {
+        font-size: 18px;
+    }
+    .type_title, .date_title, .title_text {
+        font-size: 14px;
+    }
+    .date_style, .title_inp {
+        font-size: 12px;
+        max-width: unset;
+    }
+    .body {
+        padding-left: 13px;
+        padding-right: 13px;
+        margin-top: 13px;
+    }
+    .radio_title {
+        font-size: 11px;
+    }
+    .radio_text {
+        font-size: 10px;
+    }
+    .radio_style {
+        padding: 12px 8px 9px 6px;
+        border: 1px solid #F2F5EF;
+    }
+    .radio_btn {
+        margin-top: 1px;
+        width: 12px;
+        height: 12px;
+        border: 2px solid #96B0A8;
+
+    }
+    .radio_inp:checked + .radio_style .radio_btn {
+        border: 2px solid #059669;
+    }
+    .radio_inp:checked + .radio_style .radio_btn::before {
+        width: 4px;
+        height: 4px;
+    }
+    .radio_wrap {
+        margin-left: 17px;
+    }
+    .body label {
+        width: 50%;
+    }
+    .radio_inp:checked + .radio_style {
+        border: 1px solid #059669;
     }
 }

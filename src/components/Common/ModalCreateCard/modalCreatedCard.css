@@ -19,3 +19,11 @@
         top: 10px;
     }
 }
+@media (max-width: 600px)  {
+    .react-datepicker__input-container, .react-datepicker-wrapper {
+        max-width: unset;
+    }
+    .react-datepicker__input-container::before {
+        top: 8px;
+    }
+}

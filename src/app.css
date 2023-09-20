@@ -6,3 +6,6 @@
 .simple-bar {
     max-height: 100vh;
 }
+body {
+    min-width: 320px;
+}
