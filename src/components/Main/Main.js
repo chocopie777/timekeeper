@@ -39,7 +39,18 @@ function Main(props) {
     }
 
     function editCard(item) {
-
+        setCards(
+            cards.map((i) => {
+                if(i.id === item.id) {
+                    return {
+                        ...i,
+                        ...item
+                    }
+                } else {
+                    return i;
+                }
+            })
+        )
     }
 
     function handleSortBy(id) {
@@ -119,6 +130,7 @@ function Main(props) {
                        search={search}
                        onSetIsAddCard={setIsAddCard}
                        onDeleteCard={handleDeleteCard}
+                       onEditCard={editCard}
                 />
             </div>
             {isAddCard && <ModalCreateCard onClose={() => {

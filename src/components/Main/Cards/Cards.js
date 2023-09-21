@@ -3,7 +3,7 @@ import styles from './cards.module.css';
 import Card from "./Card/Card";
 import EmptyCard from "./EmptyCard/EmptyCard";
 
-function Cards({cards, sortBy, groupBy, search, onSetIsAddCard, onDeleteCard}) {
+function Cards({cards, sortBy, groupBy, search, onSetIsAddCard, onDeleteCard, onEditCard}) {
     let nextCards = cards.slice();
 
     if (search !== '') {
@@ -86,9 +86,11 @@ function Cards({cards, sortBy, groupBy, search, onSetIsAddCard, onDeleteCard}) {
                                                  title={item.title}
                                                  date={item.date}
                                                  type={item.type}
+                                                 id={item.id}
                                                  onDeleteCard={() => {
                                                      onDeleteCard(item.id)
                                                  }}
+                                                 onEditCard={onEditCard}
                                     />
                                 })
                             }

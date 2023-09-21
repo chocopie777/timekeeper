@@ -4,35 +4,31 @@ import * as dayjs from 'dayjs'
 import CardSettings from "./CardSettings/CardSettings";
 import ModalEditCard from "../../../Common/ModalEditCard/ModalEditCard";
 
-function Card({title, date, type, onDeleteCard}) {
+function Card({title, date, type, onDeleteCard, onEditCard, id}) {
     const [isEditCard, setIsEditCard] = useState(false);
-    // TODO TODO TODO TODO TODO TODO TODO
-    // перенести функцию editCard из main через пропсы сюда
-    // перенести функцию editCard из main через пропсы сюда
-    // перенести функцию editCard из main через пропсы сюда
-    // перенести функцию editCard из main через пропсы сюда
     let month;
     let day;
     let hour;
     let minute;
+    let nextDate = date;
     let nowDate = new Date();
 
     if (type === 0) {
-        month = dayjs(nowDate).diff(dayjs(date), 'month');
+        month = dayjs(nowDate).diff(dayjs(nextDate), 'month');
         nowDate = dayjs(nowDate).subtract(month, 'month')
-        day = dayjs(nowDate).diff(dayjs(date), 'day');
+        day = dayjs(nowDate).diff(dayjs(nextDate), 'day');
         nowDate = dayjs(nowDate).subtract(day, 'day');
-        hour = dayjs(nowDate).diff(dayjs(date), 'hour');
+        hour = dayjs(nowDate).diff(dayjs(nextDate), 'hour');
         nowDate = dayjs(nowDate).subtract(hour, 'hour');
-        minute = dayjs(nowDate).diff(dayjs(date), 'minute');
+        minute = dayjs(nowDate).diff(dayjs(nextDate), 'minute');
     } else {
-        month = dayjs(date).diff(dayjs(nowDate), 'month');
-        date = dayjs(date).subtract(month, 'month')
-        day = dayjs(date).diff(dayjs(nowDate), 'day');
-        date = dayjs(date).subtract(day, 'day');
-        hour = dayjs(date).diff(dayjs(nowDate), 'hour');
-        date = dayjs(date).subtract(hour, 'hour');
-        minute = dayjs(date).diff(dayjs(nowDate), 'minute');
+        month = dayjs(nextDate).diff(dayjs(nowDate), 'month');
+        nextDate = dayjs(nextDate).subtract(month, 'month')
+        day = dayjs(nextDate).diff(dayjs(nowDate), 'day');
+        nextDate = dayjs(nextDate).subtract(day, 'day');
+        hour = dayjs(nextDate).diff(dayjs(nowDate), 'hour');
+        nextDate = dayjs(nextDate).subtract(hour, 'hour');
+        minute = dayjs(nextDate).diff(dayjs(nowDate), 'minute');
     }
     if (month < 0 || day < 0 || hour < 0 || minute < 0) {
         month = 0;
@@ -79,6 +75,15 @@ function Card({title, date, type, onDeleteCard}) {
                 document.querySelector('.simple-bar').classList.remove('off-scroll');
                 setIsEditCard(false)
             }}
+                                          onEditCard={onEditCard}
+                                          cardData={
+                                              {
+                                                  id: id,
+                                                  title: title,
+                                                  date: date,
+                                                  type: type
+                                              }
+                                          }
             />}
         </>
     );
