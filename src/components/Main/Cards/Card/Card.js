@@ -76,7 +76,7 @@ function Card({title, date, type, onDeleteCard, onEditCard, id}) {
                 setIsEditCard(false)
             }}
                                           onEditCard={onEditCard}
-                                          cardData={
+                                          initialCardData={
                                               {
                                                   id: id,
                                                   title: title,

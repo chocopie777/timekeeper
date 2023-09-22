@@ -6,10 +6,10 @@ import icon_calendar from './icon_calendar.svg';
 import modal from './modalEditCard.css';
 import {v4} from 'uuid';
 
-function ModalEditCard({onClose, onEditCard, cardData}) {
-    const [date, setDate] = useState(new Date(cardData.date));
-    const [type, setType] = useState(cardData.type);
-    const [title, setTitle] = useState(cardData.title);
+function ModalEditCard({onClose, onEditCard, initialCardData}) {
+    const [date, setDate] = useState(new Date(initialCardData.date));
+    const [type, setType] = useState(initialCardData.type);
+    const [title, setTitle] = useState(initialCardData.title);
 
     return (
         <div className={styles.wrap}>
@@ -83,7 +83,7 @@ function ModalEditCard({onClose, onEditCard, cardData}) {
                             onClick={() => {
                                 onEditCard(
                                     {
-                                        id: cardData.id,
+                                        id: initialCardData.id,
                                         type: type,
                                         date: date,
                                         title: title
