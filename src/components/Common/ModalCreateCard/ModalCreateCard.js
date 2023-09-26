@@ -6,7 +6,7 @@ import icon_calendar from './icon_calendar.svg';
 import modal from './modalCreatedCard.css';
 import {v4} from 'uuid';
 
-function ModalCreateCard({addCard, onClose}) {
+function ModalCreateCard({onAddCard, onClose}) {
     const [date, setDate] = useState(new Date());
     const [type, setType] = useState(0);
     const [title, setTitle] = useState('');
@@ -81,7 +81,7 @@ function ModalCreateCard({addCard, onClose}) {
                 <div className={styles.footer}>
                     <button className={styles.btn_create}
                             onClick={() => {
-                                addCard(
+                                onAddCard(
                                     {
                                         id: v4(),
                                         type: type,

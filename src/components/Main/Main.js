@@ -1,13 +1,13 @@
-import React, {useState} from 'react';
+import React, {useReducer, useState} from 'react';
 import styles from './main.module.css';
 import Panel from "./Panel/Panel";
 import Cards from "./Cards/Cards";
 import ModalCreateCard from "../Common/ModalCreateCard/ModalCreateCard";
-import ModalEditCard from "../Common/ModalEditCard/ModalEditCard";
+import cardsReducer from "./cardsReducer";
 
 function Main(props) {
     const [isAddCard, setIsAddCard] = useState(false);
-    const [cards, setCards] = useState([]);
+    const [cards, dispatch] = useReducer(cardsReducer, [])
     const [sortBy, setSortBy] = useState([
         {
             id: 0,
@@ -31,26 +31,25 @@ function Main(props) {
     ]);
     const [search, setSearch] = useState('');
 
-    function addCard(item) {
-        setCards([
-            ...cards,
-            item
-        ])
+    function handleAddCard(item) {
+        dispatch({
+           type: 'added',
+           item: item
+        });
     }
 
-    function editCard(item) {
-        setCards(
-            cards.map((i) => {
-                if(i.id === item.id) {
-                    return {
-                        ...i,
-                        ...item
-                    }
-                } else {
-                    return i;
-                }
-            })
-        )
+    function handleEditCard(item) {
+        dispatch({
+            type: 'edited',
+            item: item
+        });
+    }
+
+    function handleDeleteCard(id) {
+        dispatch({
+            type: 'removed',
+            id: id
+        });
     }
 
     function handleSortBy(id) {
@@ -108,16 +107,10 @@ function Main(props) {
         ]);
     }
 
-    function handleDeleteCard(id) {
-        setCards(
-            cards.filter((card) => card.id !== id)
-        );
-    }
-
     return (
         <main className={styles.main}>
             <div className={styles.container}>
-                <Panel addCard={addCard}
+                <Panel onAddCard={handleAddCard}
                        sortBy={sortBy}
                        groupBy={groupBy}
                        onSort={handleSortBy}
@@ -130,7 +123,7 @@ function Main(props) {
                        search={search}
                        onSetIsAddCard={setIsAddCard}
                        onDeleteCard={handleDeleteCard}
-                       onEditCard={editCard}
+                       onEditCard={handleEditCard}
                 />
             </div>
             {isAddCard && <ModalCreateCard onClose={() => {
@@ -138,7 +131,7 @@ function Main(props) {
                 document.querySelector('.simple-bar').classList.remove('off-scroll');
                 setIsAddCard(false)
             }}
-                                           addCard={addCard}
+                                           onAddCard={handleAddCard}
             />}
         </main>
     );
