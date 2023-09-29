@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/timekeeper/static/css/main.3ec0e179.css",
+    "main.js": "/timekeeper/static/js/main.eaae07f2.js",
+    "static/js/787.35b7997c.chunk.js": "/timekeeper/static/js/787.35b7997c.chunk.js",
+    "static/media/Montserrat-Bold.woff": "/timekeeper/static/media/Montserrat-Bold.8ce6f4ee86ac2cbc9b0f.woff",
+    "static/media/Montserrat-SemiBold.woff": "/timekeeper/static/media/Montserrat-SemiBold.b8891b663699c1ed0b43.woff",
+    "static/media/Montserrat-Medium.woff": "/timekeeper/static/media/Montserrat-Medium.8fbdea08412c70e6d65c.woff",
+    "static/media/Montserrat-Regular.woff": "/timekeeper/static/media/Montserrat-Regular.21e541a4a652a7fa0d6a.woff",
+    "static/media/Montserrat-Bold.woff2": "/timekeeper/static/media/Montserrat-Bold.2695cf49ae7429c18e10.woff2",
+    "static/media/Montserrat-Medium.woff2": "/timekeeper/static/media/Montserrat-Medium.ee886f49896d934d6c26.woff2",
+    "static/media/Montserrat-SemiBold.woff2": "/timekeeper/static/media/Montserrat-SemiBold.b5837b161389882292f7.woff2",
+    "static/media/Montserrat-Regular.woff2": "/timekeeper/static/media/Montserrat-Regular.fc432875c59da8482816.woff2",
+    "static/media/github.svg": "/timekeeper/static/media/github.839a4620f33732a2c0f17081aaa97c1e.svg",
+    "static/media/logo.svg": "/timekeeper/static/media/logo.8682a366971cf22607598b2b9e5e5987.svg",
+    "index.html": "/timekeeper/index.html",
+    "static/media/empty_icon.svg": "/timekeeper/static/media/empty_icon.b2544666d488ac77b3e7ed6c2a7f713e.svg",
+    "static/media/search_icon.svg": "/timekeeper/static/media/search_icon.f2be7cbf4813aa6037df.svg",
+    "static/media/icon_calendar.svg": "/timekeeper/static/media/icon_calendar.2cb97dae82c5708102aaf15ad1474fa0.svg",
+    "main.3ec0e179.css.map": "/timekeeper/static/css/main.3ec0e179.css.map",
+    "main.eaae07f2.js.map": "/timekeeper/static/js/main.eaae07f2.js.map",
+    "787.35b7997c.chunk.js.map": "/timekeeper/static/js/787.35b7997c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.3ec0e179.css",
+    "static/js/main.eaae07f2.js"
+  ]
+}
