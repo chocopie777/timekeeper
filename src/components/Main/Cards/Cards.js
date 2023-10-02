@@ -37,9 +37,11 @@ function Cards({cards, sortBy, groupBy, search, onSetIsAddCard, onDeleteCard, on
             if (item.title === 'Date') {
                 if (item.increase) {
                     nextCards.sort((a, b) => {
-                        if (a.date.getTime() > b.date.getTime()) {
+                        const aDate = new Date(a.date);
+                        const bDate = new Date(b.date);
+                        if (aDate.getTime() > bDate.getTime()) {
                             return 1;
-                        } else if (a.date.getTime() < b.date.getTime()) {
+                        } else if (aDate.getTime() < bDate.getTime()) {
                             return -1;
                         } else {
                             return 0;
@@ -47,9 +49,11 @@ function Cards({cards, sortBy, groupBy, search, onSetIsAddCard, onDeleteCard, on
                     })
                 } else {
                     nextCards.sort((a, b) => {
-                        if (a.date.getTime() < b.date.getTime()) {
+                        const aDate = new Date(a.date);
+                        const bDate = new Date(b.date);
+                        if (aDate.getTime() < bDate.getTime()) {
                             return 1;
-                        } else if (a.date.getTime() > b.date.getTime()) {
+                        } else if (aDate.getTime() > bDate.getTime()) {
                             return -1
                         } else {
                             return 0;

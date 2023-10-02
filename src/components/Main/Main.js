@@ -1,4 +1,4 @@
-import React, {useReducer, useState} from 'react';
+import React, {useEffect, useReducer, useState} from 'react';
 import styles from './main.module.css';
 import Panel from "./Panel/Panel";
 import Cards from "./Cards/Cards";
@@ -7,7 +7,8 @@ import cardsReducer from "./cardsReducer";
 
 function Main(props) {
     const [isAddCard, setIsAddCard] = useState(false);
-    const [cards, dispatch] = useReducer(cardsReducer, [])
+    const [cards, dispatch] = useReducer(cardsReducer,
+        JSON.parse(localStorage.getItem('cards')) || [])
     const [sortBy, setSortBy] = useState([
         {
             id: 0,
@@ -30,6 +31,10 @@ function Main(props) {
         }
     ]);
     const [search, setSearch] = useState('');
+
+    useEffect(() => {
+        localStorage.setItem('cards', JSON.stringify(cards));
+    }, [cards]);
 
     function handleAddCard(item) {
         dispatch({

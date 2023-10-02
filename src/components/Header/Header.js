@@ -7,11 +7,11 @@ function Header(props) {
         <header className={styles.header}>
             <div className={styles.container}>
                 <div className={styles.inner}>
-                    <a className={styles.logo} href="/">
+                    <a className={styles.logo} href="https://chocopie777.github.io/timekeeper/">
                         <img src={logo} alt="logo"/>
                         <span className={styles.text}>TimeKeeper</span>
                     </a>
-                    <a className={styles.link_git} href="/">
+                    <a className={styles.link_git} href="https://github.com/chocopie777/timekeeper">
                         Github
                     </a>
                 </div>
