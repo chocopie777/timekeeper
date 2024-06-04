@@ -2,6 +2,7 @@
 ## Сайт: https://chocopie777.github.io/timekeeper/
 ### `Используемые технологии`
 
+- webpack Create-React-App
 - HTML
 - CSS modules
 - React
